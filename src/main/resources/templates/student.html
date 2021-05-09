@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+    <style>
+        table, td, th{
+            border: 1px solid black;
+            width: 900px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p>Return to <a href="/">homepage</a></p>
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Surname </th>
+        <th> Patronymic </th>
+        <th> Birth Date </th>
+        <th> Group </th>
+        <th> ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="content : ${student}">
+        <td><span th:text="${content.id}"> None </span></td>
+        <td><span th:text="${content.name}"> None </span></td>
+        <td><span th:text="${content.surname}"> None </span></td>
+        <td><span th:text="${content.patronymic}"> None </span></td>
+        <td><span th:text="${#dates.format(content.birth, 'dd-MM-yyyy')}"> None </span></td>
+        <td><span th:text="${content.group}"> None </span></td>
+        <td><a th:href="@{/delete(id=${content.id})}"> Delete </a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

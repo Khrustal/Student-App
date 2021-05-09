@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<p>Home Page</p>
+<p>Get all <a href="/student">students</a></p>
+<p>Create <a href="/create">student</a></p>
+<form th:action="@{/student(param1='id')}">
+    <p>Find student by id:</p>
+    <input type="text" th:name="id"/>
+    <input type="submit"/>
+</form>
+<form th:action="@{/delete(param1='id')}">
+    <p>Delete student by id:</p>
+    <input type="text" th:name="id"/>
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
